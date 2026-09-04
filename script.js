@@ -34,6 +34,28 @@ const modalDesc = document.getElementById("modal-desc");
 const modalCategory = document.getElementById("modal-category");
 const modalLink = document.getElementById("modal-link");
 
+// DYNAMIC CARD IFRAME RESIZER FOR ALL SCREEN SIZES
+function updateCardIframeScaling() {
+  const viewports = document.querySelectorAll(".card-preview-viewport");
+  viewports.forEach((viewport) => {
+    const iframe = viewport.querySelector("iframe");
+    if (!iframe) return;
+
+    // Fixed desktop canvas width inside the iframe
+    const internalCanvasWidth = 1280;
+    const currentContainerWidth = viewport.clientWidth;
+
+    // Calculate scale factor relative to container width
+    const scale = currentContainerWidth / internalCanvasWidth;
+    iframe.style.transform = `scale(${scale})`;
+  });
+}
+
+// Observe container dimension changes across device rotations & resizes
+const resizeObserver = new ResizeObserver(() => {
+  updateCardIframeScaling();
+});
+
 function applyFilters() {
   const filtered = galleryItems.filter((item) => {
     const matchesCategory =
@@ -85,6 +107,14 @@ function renderGallery(items) {
 
     galleryGrid.appendChild(card);
   });
+
+  // Track each viewport for scaling
+  document.querySelectorAll(".card-preview-viewport").forEach((el) => {
+    resizeObserver.observe(el);
+  });
+
+  // Run initial scale pass
+  updateCardIframeScaling();
 }
 
 function openModal(item) {
@@ -100,7 +130,7 @@ function openModal(item) {
 
 function closeModal() {
   modal.classList.remove("active");
-  modalIframe.src = "";
+  modalIframe.src = ""; // Unload iframe to save memory/audio on mobile
   document.body.classList.remove("modal-open");
 }
 
@@ -130,4 +160,6 @@ filterBtns.forEach((btn) => {
   });
 });
 
+// INITIALIZE
 applyFilters();
+window.addEventListener("resize", updateCardIframeScaling);
