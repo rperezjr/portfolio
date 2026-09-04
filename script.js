@@ -13,7 +13,7 @@ const galleryItems = [
     title: "Dulce Capricho Bakery",
     category: "web",
     desc: "A multi-page responsive storefront and digital catalog built with semantic HTML5, CSS transitions, and an optimized mobile layout.",
-    url: "https://rperezjr.github.io/Dulce-Capricho/",
+    url: "https://rperezjr.github.io/Dulce_Capricho/",
     buttonText: "Launch Live Site"
   }
 ];
@@ -64,7 +64,6 @@ function renderGallery(items) {
     card.setAttribute("role", "button");
     card.setAttribute("aria-label", `Open interactive preview for ${item.title}`);
     
-    // Renders the scaled preview iframe from the actual web address
     card.innerHTML = `
       <div class="card-preview-viewport">
         <iframe src="${item.url}" title="${item.title} Preview" loading="lazy"></iframe>
@@ -101,7 +100,7 @@ function openModal(item) {
 
 function closeModal() {
   modal.classList.remove("active");
-  modalIframe.src = ""; // Unload iframe to save memory/audio/animations
+  modalIframe.src = "";
   document.body.classList.remove("modal-open");
 }
 
