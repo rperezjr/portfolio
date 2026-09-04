@@ -13,16 +13,17 @@
 </head>
 <body>
 
+  <!-- RESPONSIVE SIDEBAR / MOBILE HEADER -->
   <aside>
     <div class="brand">
       <div class="brand-logo">R</div>
-      <div class="brand-title">RPHOTOGRAPHY</div>
+      <div class="brand-title">Roberto Perez</div>
     </div>
 
     <nav>
       <ul class="nav-list">
         <li>
-          <a href="#" class="active">
+          <a href="#portfolio" class="nav-link active" data-section="portfolio">
             <span class="nav-dot"></span>Portfolio Home
           </a>
         </li>
@@ -42,12 +43,12 @@
           </a>
         </li>
         <li>
-          <a href="#about">
+          <a href="#about" class="nav-link" data-section="about">
             <span class="nav-dot"></span>About
           </a>
         </li>
         <li>
-          <a href="#contact">
+          <a href="#contact" class="nav-link" data-section="contact">
             <span class="nav-dot"></span>Contact
           </a>
         </li>
@@ -55,7 +56,7 @@
     </nav>
 
     <div class="sidebar-footer">
-      <span>RPHOTOGRAPHY &copy; 2026</span>
+      <span>ROBERTO PEREZ &copy; 2026</span>
       <div class="footer-links">
         <a href="https://github.com/rperezjr" target="_blank" rel="noreferrer">GitHub</a>
         <span class="sep">/</span>
@@ -64,28 +65,87 @@
     </div>
   </aside>
 
+  <!-- MAIN VIEWPORT -->
   <main>
-    <header>
-      <div class="search-bar-container">
-        <span class="search-icon">&#9906;</span>
-        <input type="text" id="search-input" placeholder="Search projects, stack, or category...">
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="content-section active-section">
+      <header>
+        <div class="search-bar-container">
+          <span class="search-icon">&#9906;</span>
+          <input type="text" id="search-input" placeholder="Search projects, stack, or category...">
+        </div>
+
+        <div class="filter-tags">
+          <button class="filter-btn active" data-filter="all">All Works</button>
+          <button class="filter-btn" data-filter="media">Media &amp; Photo</button>
+          <button class="filter-btn" data-filter="web">Web Dev</button>
+        </div>
+      </header>
+
+      <div class="section-title">
+        <h2>Curated Showcase</h2>
+        <span class="count-badge" id="item-count">0 Works</span>
       </div>
 
-      <div class="filter-tags">
-        <button class="filter-btn active" data-filter="all">All Works</button>
-        <button class="filter-btn" data-filter="media">Media &amp; Photo</button>
-        <button class="filter-btn" data-filter="web">Web Dev</button>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="content-section">
+      <div class="page-header-title">
+        <h2>About Me</h2>
+        <p class="subtitle">Software Developer &bull; Sports Photographer &bull; Tech Enthusiast</p>
       </div>
-    </header>
 
-    <div class="section-title">
-      <h2>Curated Showcase</h2>
-      <span class="count-badge" id="item-count">0 Works</span>
-    </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Background &amp; Education</h3>
+          <p>I am an undergraduate Computer Science student at Missouri State University pursuing a Bachelor of Science with a concentration in Software Development and a minor in Business Application Development, having previously earned my Associate Degree in Computer Science from Ozarks Technical Community College.</p>
+        </div>
+        <div class="about-card">
+          <h3>Technical Stack</h3>
+          <p>Experienced in full-stack web development (HTML5, CSS, JavaScript, Spring Boot, Java, JPA/Hibernate, Maven), system virtualization environments (macOS/Windows ARM), and responsive UI system architecture.</p>
+        </div>
+        <div class="about-card">
+          <h3>Sports Media &amp; Photography</h3>
+          <p>Passionate about capturing high-speed action and night sports photography (such as Monett soccer matches) using professional camera gear, custom indexing pipelines, and immersive web galleries.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="gallery-grid" id="gallery-grid"></div>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="content-section">
+      <div class="page-header-title">
+        <h2>Get In Touch</h2>
+        <p class="subtitle">Let's connect for software engineering projects, web apps, or creative media collaborations.</p>
+      </div>
+
+      <div class="contact-grid-wrapper">
+        <div class="contact-card-main">
+          <h3>Direct Communication</h3>
+          <p>The fastest way to reach me is directly via email or professional networks.</p>
+          
+          <div class="email-copy-box">
+            <span id="email-text">rperezjr600@gmail.com</span>
+            <button id="copy-email-btn" class="live-demo-btn">Copy Email</button>
+          </div>
+
+          <div class="contact-links-grid">
+            <a href="https://github.com/rperezjr" target="_blank" rel="noreferrer" class="contact-social-link">
+              <span>GitHub Profile</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="contact-social-link">
+              <span>LinkedIn Network</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- POPUP PREVIEW MODAL -->
   <div class="modal" id="preview-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
       <div class="modal-header">

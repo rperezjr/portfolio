@@ -33,6 +33,8 @@ const galleryGrid = document.getElementById("gallery-grid");
 const searchInput = document.getElementById("search-input");
 const filterBtns = document.querySelectorAll(".filter-btn");
 const itemCount = document.getElementById("item-count");
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll(".content-section");
 
 const modal = document.getElementById("preview-modal");
 const closeModalBtn = document.getElementById("close-modal");
@@ -41,6 +43,46 @@ const modalTitle = document.getElementById("modal-title");
 const modalDesc = document.getElementById("modal-desc");
 const modalCategory = document.getElementById("modal-category");
 const modalLink = document.getElementById("modal-link");
+
+// NAVIGATION VIEW CONTROLLER (Portfolio / About / Contact)
+navLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetSectionId = link.getAttribute("data-section");
+
+    // Update active nav state
+    navLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+
+    // Switch visible sections
+    sections.forEach(sec => {
+      sec.classList.remove("active-section");
+      if (sec.id === targetSectionId) {
+        sec.classList.add("active-section");
+      }
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+// COPY EMAIL TO CLIPBOARD INTERACTION
+const copyBtn = document.getElementById("copy-email-btn");
+if (copyBtn) {
+  copyBtn.addEventListener("click", () => {
+    const emailToCopy = document.getElementById("email-text").textContent;
+    navigator.clipboard.writeText(emailToCopy).then(() => {
+      const originalText = copyBtn.textContent;
+      copyBtn.textContent = "Copied! ✓";
+      copyBtn.style.background = "linear-gradient(135deg, #10b981, #059669)";
+      
+      setTimeout(() => {
+        copyBtn.textContent = originalText;
+        copyBtn.style.background = "";
+      }, 2500);
+    });
+  });
+}
 
 function updateCardIframeScaling() {
   const viewports = document.querySelectorAll(".card-preview-viewport");
@@ -161,5 +203,6 @@ filterBtns.forEach((btn) => {
   });
 });
 
+// INITIALIZE
 applyFilters();
 window.addEventListener("resize", updateCardIframeScaling);
