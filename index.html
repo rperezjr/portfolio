@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roberto Perez | Software &amp; Photography Portfolio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside>
+    <div class="brand">
+      <div class="brand-logo">R</div>
+      <div class="brand-title">RPHOTOGRAPHY</div>
+    </div>
+
+    <nav>
+      <ul class="nav-list">
+        <li>
+          <a href="#" class="active">
+            <span class="nav-dot"></span>Portfolio Home
+          </a>
+        </li>
+        <li>
+          <a href="https://rperezjr.github.io/RPhotography/index.html" target="_blank" rel="noreferrer">
+            <span class="nav-dot"></span>Photography Site &#8599;
+          </a>
+        </li>
+        <li>
+          <a href="https://rperezjr.github.io/Dulce-Capricho/" target="_blank" rel="noreferrer">
+            <span class="nav-dot"></span>Dulce Capricho &#8599;
+          </a>
+        </li>
+        <li>
+          <a href="#about">
+            <span class="nav-dot"></span>About
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <span class="nav-dot"></span>Contact
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>RPHOTOGRAPHY &copy; 2026</span>
+      <div class="footer-links">
+        <a href="https://github.com/rperezjr" target="_blank" rel="noreferrer">GitHub</a>
+        <span class="sep">/</span>
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <div class="search-bar-container">
+        <span class="search-icon">&#9906;</span>
+        <input type="text" id="search-input" placeholder="Search projects, stack, or category...">
+      </div>
+
+      <div class="filter-tags">
+        <button class="filter-btn active" data-filter="all">All Works</button>
+        <button class="filter-btn" data-filter="media">Media &amp; Photo</button>
+        <button class="filter-btn" data-filter="web">Web Dev</button>
+      </div>
+    </header>
+
+    <div class="section-title">
+      <h2>Curated Showcase</h2>
+      <span class="count-badge" id="item-count">0 Works</span>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </main>
+
+  <div class="modal" id="preview-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-tag">LIVE PREVIEW / INTERACTIVE</span>
+        <button class="close-btn" id="close-modal" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-iframe-wrapper">
+          <iframe id="modal-iframe" src="" title="Interactive Site Preview" loading="lazy"></iframe>
+        </div>
+        <div class="modal-info">
+          <h3 id="modal-title"></h3>
+          <p id="modal-desc"></p>
+          <div class="modal-actions">
+            <span id="modal-category"></span>
+            <a href="#" target="_blank" rel="noreferrer" id="modal-link" class="live-demo-btn">Visit Website &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
