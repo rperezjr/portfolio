@@ -15,6 +15,14 @@ const galleryItems = [
     desc: "A multi-page responsive storefront and digital catalog built with semantic HTML5, CSS transitions, and an optimized mobile layout.",
     url: "https://rperezjr.github.io/Dulce_Capricho/",
     buttonText: "Launch Live Site"
+  },
+  {
+    id: 3,
+    title: "CustomsByDM",
+    category: "web",
+    desc: "A custom tailored business website and digital storefront featuring custom layout design and interactive product showcases.",
+    url: "https://rperezjr.github.io/CustomsByDM/",
+    buttonText: "Launch Live Site"
   }
 ];
 
@@ -34,24 +42,19 @@ const modalDesc = document.getElementById("modal-desc");
 const modalCategory = document.getElementById("modal-category");
 const modalLink = document.getElementById("modal-link");
 
-// DYNAMIC CARD IFRAME RESIZER FOR ALL SCREEN SIZES
 function updateCardIframeScaling() {
   const viewports = document.querySelectorAll(".card-preview-viewport");
   viewports.forEach((viewport) => {
     const iframe = viewport.querySelector("iframe");
     if (!iframe) return;
 
-    // Fixed desktop canvas width inside the iframe
     const internalCanvasWidth = 1280;
     const currentContainerWidth = viewport.clientWidth;
-
-    // Calculate scale factor relative to container width
     const scale = currentContainerWidth / internalCanvasWidth;
     iframe.style.transform = `scale(${scale})`;
   });
 }
 
-// Observe container dimension changes across device rotations & resizes
 const resizeObserver = new ResizeObserver(() => {
   updateCardIframeScaling();
 });
@@ -108,12 +111,10 @@ function renderGallery(items) {
     galleryGrid.appendChild(card);
   });
 
-  // Track each viewport for scaling
   document.querySelectorAll(".card-preview-viewport").forEach((el) => {
     resizeObserver.observe(el);
   });
 
-  // Run initial scale pass
   updateCardIframeScaling();
 }
 
@@ -130,7 +131,7 @@ function openModal(item) {
 
 function closeModal() {
   modal.classList.remove("active");
-  modalIframe.src = ""; // Unload iframe to save memory/audio on mobile
+  modalIframe.src = "";
   document.body.classList.remove("modal-open");
 }
 
@@ -160,6 +161,5 @@ filterBtns.forEach((btn) => {
   });
 });
 
-// INITIALIZE
 applyFilters();
 window.addEventListener("resize", updateCardIframeScaling);
