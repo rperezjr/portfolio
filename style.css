@@ -9,13 +9,14 @@
   --border-subtle: #202637;
   --border-glow: #2d3852;
 
-  --accent-cyan: #00d2ff;
-  --accent-cyan-glow: rgba(0, 210, 255, 0.25);
-  --accent-blue: #3a7bd5;
+  --accent-white: #d3d3d3;
+  --accent-grey-glow: rgba(151, 151, 151, 0.25);
+  --accent-black: #141414;
+  --accent-grey: #979797;
 
-  --text-primary: #f0f3f8;
-  --text-muted: #8b95a8;
-  --text-dim: #5a6477;
+  --text-primary: #ffffff;
+  --text-muted: #777777;
+  --text-dim: #777777;
 
   --font-display: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -78,7 +79,7 @@ aside {
 .brand-logo {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  background: linear-gradient(135deg, var(--accent-white), var(--accent-black));
   color: #ffffff;
   font-family: var(--font-display);
   font-weight: 800;
@@ -87,7 +88,7 @@ aside {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 18px var(--accent-cyan-glow);
+  box-shadow: 0 4px 18px var(--accent-grey-glow);
   flex-shrink: 0;
 }
 
@@ -127,7 +128,7 @@ aside {
   height: 6px;
   border-radius: 50%;
   background: var(--text-dim);
-  transition: background 0.2s ease;
+  transition: background-color 0.2s ease;
   flex-shrink: 0;
 }
 
@@ -140,8 +141,8 @@ aside {
 
 .nav-list a.active .nav-dot,
 .nav-list a:hover .nav-dot {
-  background: var(--accent-cyan);
-  box-shadow: 0 0 8px var(--accent-cyan);
+  background: var(--accent-white);
+  box-shadow: 0 0 8px var(--accent-grey-glow);
 }
 
 .sidebar-footer {
@@ -167,7 +168,7 @@ aside {
 }
 
 .sidebar-footer a:hover {
-  color: var(--accent-cyan);
+  color: var(--accent-grey);
 }
 
 .sidebar-footer .sep {
@@ -222,8 +223,8 @@ header {
 }
 
 .search-bar-container input:focus {
-  border-color: var(--accent-cyan);
-  box-shadow: 0 0 0 3px var(--accent-cyan-glow);
+  border-color: var(--accent-white);
+  box-shadow: 0 0 0 3px var(--accent-grey-glow);
 }
 
 .search-icon {
@@ -260,9 +261,9 @@ header {
 .filter-btn.active,
 .filter-btn:hover {
   background: var(--bg-card-hover);
-  color: var(--accent-cyan);
-  border-color: var(--accent-cyan);
-  box-shadow: 0 0 12px var(--accent-cyan-glow);
+  color: var(--accent-white);
+  border-color: var(--border-glow);
+  box-shadow: 0 0 12px var(--accent-grey-glow);
 }
 
 .section-title, .page-header-title {
@@ -294,7 +295,7 @@ header {
 
 .count-badge {
   background-color: var(--bg-surface);
-  color: var(--accent-cyan);
+  color: var(--accent-white);
   border: 1px solid var(--border-subtle);
   padding: 4px 12px;
   border-radius: 20px;
@@ -327,7 +328,7 @@ header {
 .gallery-card:hover {
   transform: translateY(-4px);
   border-color: var(--border-glow);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-cyan-glow);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-grey-glow);
 }
 
 /* RESPONSIVE SCALED EMBED PREVIEW */
@@ -378,7 +379,7 @@ header {
   font-family: var(--font-display);
   font-size: 12px;
   font-weight: 600;
-  color: var(--accent-cyan);
+  color: var(--accent-white);
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -415,7 +416,7 @@ header {
 .about-card h3 {
   font-family: var(--font-display);
   font-size: 16px;
-  color: var(--accent-cyan);
+  color: var(--accent-white);
   margin-bottom: 12px;
   letter-spacing: 0.3px;
 }
@@ -443,7 +444,7 @@ header {
 .contact-card-main h3 {
   font-family: var(--font-display);
   font-size: 18px;
-  color: var(--accent-cyan);
+  color: var(--accent-white);
 }
 
 .contact-card-main p {
@@ -493,9 +494,9 @@ header {
 }
 
 .contact-social-link:hover {
-  border-color: var(--accent-cyan);
+  border-color: var(--border-glow);
   background-color: var(--bg-card-hover);
-  color: var(--accent-cyan);
+  color: var(--accent-white);
 }
 
 /* POPUP PREVIEW MODAL */
@@ -526,7 +527,7 @@ header {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px var(--accent-cyan-glow);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px var(--accent-grey-glow);
 }
 
 .modal-header {
@@ -542,7 +543,7 @@ header {
   font-family: var(--font-display);
   font-size: 11px;
   letter-spacing: 1px;
-  color: var(--accent-cyan);
+  color: var(--accent-white);
   font-weight: 700;
 }
 
@@ -622,7 +623,7 @@ header {
 }
 
 .live-demo-btn {
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  background: linear-gradient(135deg, var(--accent-white), var(--accent-black));
   color: #ffffff;
   padding: 10px 20px;
   border-radius: var(--radius-sm);
@@ -633,7 +634,7 @@ header {
   letter-spacing: 0.5px;
   transition: opacity 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
-  border: none;
+  border: 1px solid var(--border-glow);
   cursor: pointer;
 }
 
